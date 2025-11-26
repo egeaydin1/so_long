@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/hientranpc/Desktop/42/so_long/lib/mlx",
+      "program": "/Users/hientranpc/Desktop/42/so_long/lib/mlx/build/Debug/outDebug"
+    }
+  ]
+}
