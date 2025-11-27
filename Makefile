@@ -15,6 +15,7 @@ SRCS		= main.c \
 			  map_parser.c \
 			  map_elements.c \
 			  map_validation.c \
+			  setup.c \
 			  utils.c
 
 OBJS		= $(SRCS:.c=.o)

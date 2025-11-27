@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 09:58:11 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/11/27 10:33:41 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:07:09 by hientranpc       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,23 @@
 /*                              DEFINES                                       */
 /* ************************************************************************** */
 
-# define WIDTH 64
-# define HEIGHT 64
+# define WIDTH 1000
+# define HEIGHT 800
+# define TILE_SIZE 64
+# define PLAYER 'P'
+# define WALL '1'
+# define COLLECTIBLE 'C'
+# define EXIT 'E'
+# define EMPTY '0'
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_UP 126
+# define KEY_DOWN 125
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
 
 /* ************************************************************************** */
 /*                         GAME STRUCTURES                                    */
@@ -49,9 +64,15 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	void	*bg_img;
+	void	*wall_img;
+	void	*door_img;
+	void	*player_img;
+	void	*collec_img;
 	char	**map;
 	int		width;
 	int		height;
+	int		img_width;
+	int		img_heigh;
 	int		player_x;
 	int		player_y;
 	int		collectibles;
@@ -77,7 +98,7 @@ int		check_required_elements(char **map_arr);
 
 // Map validation functions (map.c)
 int		is_rectangle_and_walled(char **map_arr);
-int		map_main(char *map_file, t_data *game);
+int		map_main(char *map_file, t_game *game);
 
 // Path validation functions (map_validation.c)
 int		is_valid_path(char **map);

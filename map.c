@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 09:57:36 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/11/27 09:57:37 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:41:10 by hientranpc       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,33 @@ static int	map_validation(char **map_arr)
 	return (1);
 }
 
-int	map_main(char *map_file, t_data *game)
+static void	find_player_pos(char **map, int *x, int *y)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == PLAYER)
+			{
+				*x = j;
+				*y = i;
+				return ;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int	map_main(char *map_file, t_game *game)
 {
 	char	**map_arr;
+	int		len;
 
 	map_arr = map_parser(map_file);
 	if (!map_arr)
@@ -88,5 +112,11 @@ int	map_main(char *map_file, t_data *game)
 		return (0);
 	}
 	game->map = map_arr;
+	len = ft_strlen(map_arr[0]);
+	if (map_arr[0][len - 1] == '\n')
+		len--;
+	game->width = len;
+	game->height = get_map_height(map_arr);
+	find_player_pos(map_arr, &game->player_x, &game->player_y);
 	return (1);
 }

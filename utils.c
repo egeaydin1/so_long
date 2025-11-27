@@ -28,10 +28,33 @@ void	ft_free_split(char **arr)
 	free(arr);
 }
 
-int error_return(char *str, int return_v)
+int	error_return(char *str, int return_v)
 {
 	ft_printf("Error\n%s", str);
 	return (return_v);
+}
+
+void	free_game(t_game *game)
+{
+	if (!game)
+		return ;
+	if (game->mlx)
+	{
+		if (game->bg_img)
+			mlx_destroy_image(game->mlx, game->bg_img);
+		if (game->wall_img)
+			mlx_destroy_image(game->mlx, game->wall_img);
+		if (game->door_img)
+			mlx_destroy_image(game->mlx, game->door_img);
+		if (game->player_img)
+			mlx_destroy_image(game->mlx, game->player_img);
+		if (game->collec_img)
+			mlx_destroy_image(game->mlx, game->collec_img);
+		if (game->win)
+			mlx_destroy_window(game->mlx, game->win);
+	}
+	if (game->map)
+		ft_free_split(game->map);
 }
 
 int arg_check(int ac, char **av)
