@@ -10,13 +10,18 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 PRINTF		= $(PRINTF_DIR)/libftprintf.a
 MLX_LIB		= $(MLX_DIR)/libmlx.a
 
-SRCS		= main.c \
-			  map.c \
-			  map_parser.c \
-			  map_elements.c \
-			  map_validation.c \
-			  setup.c \
-			  utils.c
+SRCS		= src/main.c \
+			  src/map.c \
+			  src/map_parser.c \
+			  src/map_elements.c \
+			  src/map_validation.c \
+			  src/game_init.c \
+			  src/game_texture.c \
+			  src/game_close.c \
+			  src/game_move.c \
+			  src/game_input.c \
+			  src/game_render.c \
+			  src/utils.c
 
 OBJS		= $(SRCS:.c=.o)
 

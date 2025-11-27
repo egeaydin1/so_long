@@ -105,6 +105,10 @@ int		is_valid_path(char **map);
 
 // Game functions
 int		init_game(t_game *game);
+int		load_texture(t_game *game);
+int		close_game(int keycode, t_game *game);
+int		can_move(t_game *game, int new_x, int new_y);
+void	move_player(t_game *game, int new_x, int new_y);
 int		handle_input(int keycode, t_game *game);
 void	render_game(t_game *game);
 
