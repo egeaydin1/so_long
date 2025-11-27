@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 09:57:20 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/11/27 10:07:33 by egeaydin         ###   ########.fr       */
+/*   Created: 2025/11/27 09:57:15 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/11/27 10:36:44 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 # include "so_long.h"
-
-int	main(int ac, char **av)
+void	load_texture(t_data *data)
 {
-	t_data game;
+	game->bg_img  = mlx_xpm_file_to_image(game->mlx, "textures/bg.xpm", &game->img_w)
 
-    if(!arg_check(ac, av))
-		return (1);
-	if (!map_main(av[1], game))
-		return (1);
-	init_game(game);
-	printf("map is valid\n");
-    return 0;
+	
+}
+int	init_game(t_data *game)
+{
+    game->mlx = mlx_init();
+    if (!game->mlx)
+		return(error_return("mlx_init failed\n",0));
+	game->win = mlx_new_window(data->mlx, WIDTH, HEIGHT,"so_long - PACMAN");
+	if(!data->win)
+		return(error_return("mlx_new_window failed\n",0));
+	load_texture(data);
+	
+    
 }

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
+/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 14:51:00 by hientran          #+#    #+#             */
-/*   Updated: 2025/11/26 20:18:32 by hientranpc       ###   ########.fr       */
+/*   Created: 2025/11/27 09:58:11 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/11/27 10:33:41 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
@@ -47,6 +48,7 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	void	*bg_img;
 	char	**map;
 	int		width;
 	int		height;
@@ -75,7 +77,7 @@ int		check_required_elements(char **map_arr);
 
 // Map validation functions (map.c)
 int		is_rectangle_and_walled(char **map_arr);
-int		map_main(char *map_file);
+int		map_main(char *map_file, t_data *game);
 
 // Path validation functions (map_validation.c)
 int		is_valid_path(char **map);

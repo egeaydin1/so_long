@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
+/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 20:20:00 by hientranpc        #+#    #+#             */
-/*   Updated: 2025/11/26 20:25:00 by hientranpc       ###   ########.fr       */
+/*   Created: 2025/11/27 09:57:36 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/11/27 09:57:37 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "so_long.h"
 
@@ -74,7 +75,7 @@ static int	map_validation(char **map_arr)
 	return (1);
 }
 
-int	map_main(char *map_file)
+int	map_main(char *map_file, t_data *game)
 {
 	char	**map_arr;
 
@@ -86,6 +87,6 @@ int	map_main(char *map_file)
 		ft_free_split(map_arr);
 		return (0);
 	}
-	ft_free_split(map_arr);
+	game->map = map_arr;
 	return (1);
 }

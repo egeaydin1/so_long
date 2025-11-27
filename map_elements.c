@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   map_elements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
+/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 20:25:00 by hientranpc        #+#    #+#             */
-/*   Updated: 2025/11/26 20:25:00 by hientranpc       ###   ########.fr       */
+/*   Created: 2025/11/27 09:57:51 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/11/27 09:57:52 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "so_long.h"
 
