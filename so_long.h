@@ -6,7 +6,7 @@
 /*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 09:58:11 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/11/27 12:07:09 by hientranpc       ###   ########.fr       */
+/*   Updated: 2025/11/27 20:42:35 by hientranpc       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@
 /*                              DEFINES                                       */
 /* ************************************************************************** */
 
-# define WIDTH 1000
-# define HEIGHT 800
 # define TILE_SIZE 64
 # define PLAYER 'P'
 # define WALL '1'
